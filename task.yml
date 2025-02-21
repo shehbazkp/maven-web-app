@@ -1,6 +1,8 @@
 ---
 - name: First Play - Docker Image Build
   hosts: docker
+  vars:
+   pwd: Shahbaz3717
   tasks:
     - name: Copy Dockerfile
       copy:
@@ -13,7 +15,7 @@
     - name : Build image
       command: docker build -t shehbazkp/mavenwebapp .
     - name : Docker login
-      command: docker login -u shehbazkp -p<pwd>
+      command: docker login -u shehbazkp -p "{{pwd}}"
     - name : Push Docker Image
       command: docker push shehbazkp/mavenwebapp
 - name: Second Play - K8s Deployment

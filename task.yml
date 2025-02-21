@@ -2,7 +2,7 @@
 - name: First Play - Docker Image Build
   hosts: docker
   vars:
-   pwd: Shahbaz3717
+   pwd: 1234
   tasks:
     - name: Copy Dockerfile
       copy:
